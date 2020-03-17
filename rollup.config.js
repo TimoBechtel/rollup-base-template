@@ -14,7 +14,7 @@ import normalize from 'postcss-normalize';
 const dev = process.env.ROLLUP_WATCH;
 
 export default {
-  input: 'src/app.js',
+  input: 'src/app.ts',
   output: {
     file: 'public/bundle.js',
     sourcemap: dev,
@@ -30,13 +30,18 @@ export default {
       targets: 'public/*',
       runOnce: dev,
     }),
-    resolve(),
+    resolve({
+      extensions: ['.mjs', '.js', '.json', '.node', '.ts'],
+    }),
     commonjs(),
-    !dev &&
-      babel({
-        exclude: ['node_modules/**'],
-        presets: ['@babel/preset-env'],
-      }),
+    babel({
+      extensions: ['.js', '.ts'],
+      exclude: ['node_modules/**'],
+      presets: [
+        '@babel/preset-typescript',
+        ...(!dev ? ['@babel/preset-env'] : []),
+      ],
+    }),
     postcss({
       extract: true,
       plugins: [

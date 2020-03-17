@@ -6,11 +6,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rollup -c"
+    "build": "npm run test && rollup -c",
+    "test": "tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "cssnano": "^4.1.10",
@@ -26,6 +28,7 @@
     "rollup-plugin-livereload": "^1.0.4",
     "rollup-plugin-postcss": "^2.5.0",
     "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-terser": "^5.3.0"
+    "rollup-plugin-terser": "^5.3.0",
+    "typescript": "^3.8.3"
   }
 }
