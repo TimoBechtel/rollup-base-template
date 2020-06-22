@@ -4,7 +4,7 @@ Extended template for rollup builds
 ## How to use
 Run:
 ```
-npx degit "TimoBechtel/rollup-base-template" my-app
+npx degit "TimoBechtel/rollup-base-template#main" my-app
 ```
 
 Or, with typescript support:
