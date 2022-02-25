@@ -1,3 +1,5 @@
+**⚠ Note: This template is unmaintained.**
+
 # Rollup Base Template
 Extended template for rollup builds
 
